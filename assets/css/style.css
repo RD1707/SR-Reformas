@@ -161,6 +161,34 @@ section {
     width: 100%;
 }
 
+.social-links a svg {
+    width: 24px;
+    height: 24px;
+    color: #ccc;
+    transition: color 0.3s ease;
+}
+.social-links a:hover svg {
+    color: var(--cor-branca);
+}
+
+/* Adicionar no CSS global, fora de @media */
+
+/* Estado inicial dos elementos a serem animados */
+.servico-card, .porque-item, .portfolio-item, .depoimento, 
+.about-image, .about-text, .commitment-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* Estado final quando a classe .visible é adicionada pelo JS */
+.servico-card.visible, .porque-item.visible, .portfolio-item.visible, 
+.depoimento.visible, .about-image.visible, .about-text.visible, 
+.commitment-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .menu-toggle {
     display: none; /* Escondido em telas grandes */
     font-size: 1.8rem;
@@ -461,6 +489,46 @@ section {
 
     .service-description h2 {
         text-align: center; /* Centraliza o título no mobile */
+    }
+    /* Adicionar ao final da seção @media (max-width: 768px) */
+
+    /* Estiliza o menu para o modo mobile */
+    .nav-menu {
+        position: fixed; /* Fixa o menu na tela */
+        top: 80px; /* Altura do header */
+        left: -100%; /* Começa escondido fora da tela à esquerda */
+        width: 80%; /* Ocupa 80% da largura da tela */
+        height: calc(100vh - 80px); /* Ocupa toda a altura abaixo do header */
+        background-color: var(--cor-secundaria); /* Fundo escuro para contraste */
+        flex-direction: column; /* Itens em coluna */
+        align-items: center; /* Centraliza os itens */
+        padding-top: 2rem;
+        transition: left 0.4s ease-in-out; /* Animação suave */
+        display: flex; /* Garante que o menu seja flexível */
+    }
+
+    .nav-menu.active {
+        left: 0; /* Move o menu para dentro da tela */
+    }
+
+    .nav-menu ul {
+        flex-direction: column; /* Itens do menu em coluna */
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-menu ul li {
+        margin-bottom: 1.5rem; /* Espaçamento entre os links */
+    }
+
+    .nav-menu a {
+        color: var(--cor-branca); /* Links brancos para contraste */
+        font-size: 1.2rem;
+    }
+
+    .nav-menu a:hover::after,
+    .nav-menu a::after {
+        display: none; /* Remove a linha de animação no mobile */
     }
 }
 
