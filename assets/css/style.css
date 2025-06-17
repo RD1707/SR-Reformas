@@ -1,25 +1,15 @@
-/* ==========================================================================
-   GOOGLE FONTS - Importando uma fonte moderna e legível
-   ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
-/* ==========================================================================
-   VARIÁVEIS GLOBAIS - Facilita a manutenção das cores e fontes do site
-   ========================================================================== */
 :root {
-    --cor-primaria: #D93025; /* Vermelho forte e profissional */
-    --cor-secundaria: #202124; /* Cinza bem escuro para textos e fundos */
+    --cor-primaria: #D93025;
+    --cor-secundaria: #202124;
     --cor-texto: #333;
     --cor-fundo: #FFFFFF;
-    --cor-fundo-secao: #f8f9fa; /* Um cinza bem claro para alternar o fundo */
+    --cor-fundo-secao: #f8f9fa;
     --cor-branca: #FFFFFF;
-    
     --fonte-principal: 'Roboto', sans-serif;
 }
 
-/* ==========================================================================
-   ESTILOS GLOBAIS E RESET - Para garantir consistência entre navegadores
-   ========================================================================== */
 * {
     margin: 0;
     padding: 0;
@@ -76,10 +66,6 @@ section {
     text-align: center;
 }
 
-
-/* ==========================================================================
-   BOTÕES - Estilos reutilizáveis para os botões de ação
-   ========================================================================== */
 .btn-principal, .btn-orcamento, .btn-secundario {
     display: inline-block;
     padding: 12px 28px;
@@ -109,10 +95,6 @@ section {
     color: var(--cor-branca);
 }
 
-
-/* ==========================================================================
-   HEADER - Cabeçalho do site
-   ========================================================================== */
 .header {
     background-color: var(--cor-branca);
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
@@ -131,7 +113,6 @@ section {
 
 .header .logo img {
     height: 50px;
-    color: #D93025;
 }
 
 .nav-menu ul {
@@ -161,52 +142,20 @@ section {
     width: 100%;
 }
 
-.social-links a svg {
-    width: 24px;
-    height: 24px;
-    color: #ccc;
-    transition: color 0.3s ease;
-}
-.social-links a:hover svg {
-    color: var(--cor-branca);
-}
-
-/* Adicionar no CSS global, fora de @media */
-
-/* Estado inicial dos elementos a serem animados */
-.servico-card, .porque-item, .portfolio-item, .depoimento, 
-.about-image, .about-text, .commitment-item {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-/* Estado final quando a classe .visible é adicionada pelo JS */
-.servico-card.visible, .porque-item.visible, .portfolio-item.visible, 
-.depoimento.visible, .about-image.visible, .about-text.visible, 
-.commitment-item.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
 .menu-toggle {
-    display: none; /* Escondido em telas grandes */
+    display: none;
     font-size: 1.8rem;
     background: none;
     border: none;
     cursor: pointer;
+    color: var(--cor-secundaria);
 }
 
-
-/* ==========================================================================
-   HERO SECTION - Banner Principal
-   ========================================================================== */
 #hero {
-    /* IMPORTANTE: Substitua 'hero-background.jpg' pelo nome da sua imagem de fundo */
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/hero-background.jpeg');
     background-size: cover;
     background-position: center;
-    height: calc(100vh - 80px); /* Altura da tela menos a altura do header */
+    height: calc(100vh - 80px);
     display: flex;
     align-items: center;
     text-align: center;
@@ -225,10 +174,6 @@ section {
     margin: 0 auto 2rem auto;
 }
 
-
-/* ==========================================================================
-   SEÇÃO DE SERVIÇOS
-   ========================================================================== */
 #servicos-principais {
     background-color: var(--cor-fundo-secao);
 }
@@ -246,12 +191,6 @@ section {
     text-align: center;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.servico-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
 .servico-card img {
@@ -263,10 +202,6 @@ section {
     margin-bottom: 0.5rem;
 }
 
-
-/* ==========================================================================
-   SEÇÃO "POR QUE NOS ESCOLHER"
-   ========================================================================== */
 .porque-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -282,10 +217,6 @@ section {
     color: var(--cor-primaria);
 }
 
-
-/* ==========================================================================
-   SEÇÃO PORTFÓLIO
-   ========================================================================== */
 #portfolio-home {
      background-color: var(--cor-fundo-secao);
 }
@@ -337,10 +268,6 @@ section {
     opacity: 1;
 }
 
-
-/* ==========================================================================
-   SEÇÃO DEPOIMENTOS
-   ========================================================================== */
 .depoimentos-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -367,10 +294,6 @@ section {
     font-style: normal;
 }
 
-
-/* ==========================================================================
-   FOOTER - Rodapé do site
-   ========================================================================== */
 .footer {
     background-color: var(--cor-secundaria);
     color: #ccc;
@@ -393,7 +316,7 @@ section {
 .footer-logo {
     height: 40px;
     margin-bottom: 1rem;
-    filter: brightness(0) invert(1); /* Inverte a cor do logo para branco */
+    filter: brightness(0) invert(1);
 }
 
 .footer-col ul li {
@@ -409,138 +332,25 @@ section {
     color: var(--cor-branca);
 }
 
+.social-links a svg {
+    width: 24px;
+    height: 24px;
+    color: #ccc;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover svg {
+    color: var(--cor-branca);
+}
+
 .footer-bottom {
     text-align: center;
     padding: 1.5rem 0;
     font-size: 0.9rem;
 }
 
-
-/* ==========================================================================
-   RESPONSIVIDADE - Ajustes para telas menores (celulares)
-   ========================================================================== */
-@media (max-width: 768px) {
-    h2 {
-        font-size: 1.8rem;
-    }
-
-    /* Header mobile */
-    .nav-menu {
-        display: none; /* Esconde o menu desktop */
-        /* Aqui entraria a lógica para exibir o menu mobile com JS */
-    }
-    
-    .menu-toggle {
-        display: block; /* Mostra o botão de menu hamburguer */
-    }
-    
-    .btn-orcamento {
-        display: none; /* Esconde o botão de orçamento no header */
-    }
-
-    /* Hero */
-    #hero h1 {
-        font-size: 2.2rem;
-    }
-
-    /* Grids de 2 ou mais colunas passam para 1 coluna */
-    .porque-grid,
-    .portfolio-grid,
-    .depoimentos-wrapper,
-    .footer-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .footer-grid {
-        text-align: center;
-    }
-    
-    .footer-logo {
-        margin: 0 auto 1rem auto;
-    }
-
-    /* Adicionar dentro de @media (max-width: 768px) */
-
-    .page-header h1 {
-        font-size: 2.2rem;
-    }
-
-    .about-grid {
-        grid-template-columns: 1fr; /* Faz as colunas ficarem uma sobre a outra */
-        gap: 2rem;
-    }
-
-    .about-text h2 {
-        text-align: center;
-        margin-top: 2rem;
-    }
-
-    /* Adicionar dentro de @media (max-width: 768px) */
-
-    #services-list .container {
-        gap: 3rem;
-    }
-
-    .service-item,
-    .service-item.reverse {
-        flex-direction: column; /* Empilha a imagem e o texto */
-        gap: 2rem;
-    }
-
-    .service-description h2 {
-        text-align: center; /* Centraliza o título no mobile */
-    }
-    /* Adicionar ao final da seção @media (max-width: 768px) */
-
-    /* Estiliza o menu para o modo mobile */
-    .nav-menu {
-        position: fixed; /* Fixa o menu na tela */
-        top: 80px; /* Altura do header */
-        left: -100%; /* Começa escondido fora da tela à esquerda */
-        width: 80%; /* Ocupa 80% da largura da tela */
-        height: calc(100vh - 80px); /* Ocupa toda a altura abaixo do header */
-        background-color: var(--cor-secundaria); /* Fundo escuro para contraste */
-        flex-direction: column; /* Itens em coluna */
-        align-items: center; /* Centraliza os itens */
-        padding-top: 2rem;
-        transition: left 0.4s ease-in-out; /* Animação suave */
-        display: flex; /* Garante que o menu seja flexível */
-    }
-
-    .nav-menu.active {
-        left: 0; /* Move o menu para dentro da tela */
-    }
-
-    .nav-menu ul {
-        flex-direction: column; /* Itens do menu em coluna */
-        width: 100%;
-        text-align: center;
-    }
-
-    .nav-menu ul li {
-        margin-bottom: 1.5rem; /* Espaçamento entre os links */
-    }
-
-    .nav-menu a {
-        color: var(--cor-branca); /* Links brancos para contraste */
-        font-size: 1.2rem;
-    }
-
-    .nav-menu a:hover::after,
-    .nav-menu a::after {
-        display: none; /* Remove a linha de animação no mobile */
-    }
-}
-
-
-/* ==========================================================================
-   ESTILOS DA PÁGINA SOBRE NÓS
-   ========================================================================== */
-
-/* --- Banner Padrão das Páginas Internas --- */
 .page-header {
-    /* IMPORTANTE: Crie e use uma imagem de fundo para as páginas internas */
-    background: linear-gradient(rgb(110, 0, 0), rgb(82, 0, 0)), url('../images/about-background.jpg');
+    background: linear-gradient(rgb(122, 0, 0), rgb(139, 0, 0)), url('../images/about-background.jpg');
     background-size: cover;
     background-position: center;
     padding: 4rem 0;
@@ -559,11 +369,9 @@ section {
     opacity: 0.9;
 }
 
-
-/* --- Conteúdo da Seção "Sobre" --- */
 .about-grid {
     display: grid;
-    grid-template-columns: 1fr 1.5fr; /* Coluna da imagem menor que a do texto */
+    grid-template-columns: 1fr 1.5fr;
     gap: 3rem;
     align-items: center;
 }
@@ -588,8 +396,6 @@ section {
     margin-bottom: 1rem;
 }
 
-
-/* --- Seção de Compromisso --- */
 .section-bg {
     background-color: var(--cor-fundo-secao);
 }
@@ -610,8 +416,6 @@ section {
     margin: 0 auto 1rem auto;
 }
 
-
-/* --- Seção de Chamada para Ação (CTA) Final --- */
 #cta-final {
     background-color: var(--cor-primaria);
     color: var(--cor-branca);
@@ -628,19 +432,13 @@ section {
     margin: 0 auto 1.5rem auto;
 }
 
-/* O botão aqui precisa de um estilo invertido para se destacar no fundo vermelho */
 #cta-final .btn-principal {
     background-color: var(--cor-branca);
     color: var(--cor-primaria);
     font-weight: 700;
 }
 
-/* ==========================================================================
-   ESTILOS DA PÁGINA DE SERVIÇOS
-   ========================================================================== */
-
 #services-list .container {
-    /* Cria um espaçamento entre cada item de serviço */
     display: flex;
     flex-direction: column;
     gap: 5rem;
@@ -652,12 +450,10 @@ section {
     align-items: center;
 }
 
-/* O 'flex: 1' faz com que cada filho direto (imagem e descrição) ocupe metade do espaço */
 .service-item > * {
     flex: 1;
 }
 
-/* Esta classe simplesmente inverte a ordem visual dos elementos */
 .service-item.reverse {
     flex-direction: row-reverse;
 }
@@ -678,7 +474,6 @@ section {
     margin-bottom: 1.5rem;
 }
 
-/* Estilizando a lista de detalhes de cada serviço */
 .service-description ul {
     list-style: none;
     padding-left: 0;
@@ -686,15 +481,138 @@ section {
 
 .service-description ul li {
     position: relative;
-    padding-left: 25px; /* Espaço para o ícone de check */
+    padding-left: 25px;
     margin-bottom: 0.8rem;
 }
 
 .service-description ul li::before {
-    content: '✓'; /* Símbolo de check */
+    content: '✓';
     position: absolute;
     left: 0;
     top: 1px;
     color: var(--cor-primaria);
     font-weight: bold;
+}
+
+.servico-card, .porque-item, .portfolio-item, .depoimento, 
+.about-image, .about-text, .commitment-item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.servico-card.visible, .porque-item.visible, .portfolio-item.visible, 
+.depoimento.visible, .about-image.visible, .about-text.visible, 
+.commitment-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+    
+    .btn-orcamento {
+        display: none;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 85%;
+        height: calc(100vh - 80px);
+        background-color: var(--cor-secundaria);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 2rem;
+        transition: left 0.4s ease-in-out;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        gap: 0;
+    }
+
+    .nav-menu ul li {
+        margin-bottom: 1.5rem;
+    }
+
+    .nav-menu a {
+        color: var(--cor-branca);
+        font-size: 1.2rem;
+    }
+
+    .nav-menu a:hover::after,
+    .nav-menu a::after {
+        display: none;
+    }
+
+    #hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .porque-grid,
+    .portfolio-grid,
+    .depoimentos-wrapper,
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-grid {
+        text-align: center;
+    }
+
+    .footer-logo {
+        margin: 0 auto 1rem auto;
+    }
+    
+    .footer-col {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .page-header h1 {
+        font-size: 2.2rem;
+    }
+
+    .about-grid {
+        display: block;
+    }
+
+    .about-image {
+        display: none;
+    }
+
+    .about-text h2 {
+        text-align: center;
+        margin-top: 0;
+    }
+    
+    #services-list .container {
+        gap: 3rem;
+    }
+
+    .service-item,
+    .service-item.reverse {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .service-description h2 {
+        text-align: center;
+    }
 }
